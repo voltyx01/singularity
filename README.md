@@ -6,9 +6,6 @@ A tiny, dependency-free **bridge between an orchestrating AI (Claude Code) and h
 running Gemini models)**. The orchestrator plans, reviews and owns the shared code; the workers grind through hundreds of files in parallel;
 you watch it all in a live web console. Everything is plain files and ~800 lines of standard-library Python.
 
-It was built to port a 1000+ file Minecraft mod between major versions (compile-clean is easy, behaviour-identical is hard), but nothing in
-it is Minecraft-specific: any large mechanical migration, refactor or audit with a build/test command fits.
-
 ## Why
 
 - Orchestrator tokens are expensive; a worker's quota is separate. Let the cheap model type, let the strong model judge.
