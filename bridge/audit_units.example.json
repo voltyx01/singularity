@@ -1,0 +1,4 @@
+{
+  "core": ["src/main/java/com/example/mymod/core"],
+  "network-and-events": ["src/main/java/com/example/mymod/network", "src/main/java/com/example/mymod/events"]
+}

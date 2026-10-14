@@ -1,0 +1,28 @@
+{
+  "orchestrator": "claude",
+  "worker_prefix": "gemini",
+
+  "bridge_dir": "bridge",
+  "work_dirs": ["src"],
+  "read_roots": ["src", "../reference"],
+  "commit_allow": ["src/", "bridge/REPORT/", "bridge/TASKS.md", "bridge/REQUESTS.md"],
+
+  "check": {
+    "cmd": ["./gradlew", "compileJava", "--console=plain"],
+    "error_regex": "^(?P<file>[^:\n]+\.java):(?P<line>\d+): error: (?P<msg>.*)$",
+    "scope_root": "src/main/java/com/example/mymod",
+    "ok_marker": "BUILD SUCCESSFUL",
+    "timeout": 900,
+    "env": {}
+  },
+
+  "agent": {
+    "cmd": "agy",
+    "model": "",
+    "mode": "accept-edits",
+    "cwd": ".",
+    "add_dirs": ["."],
+    "print_timeout": 2400,
+    "quota_markers": ["RESOURCE_EXHAUSTED", "Individual quota reached"]
+  }
+}

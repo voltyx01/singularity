@@ -1,0 +1,25 @@
+# local state of a running bridge (never commit: may contain project code, paths, conversations)
+bridge/chat.jsonl
+bridge/.read/
+bridge/.check.lock
+bridge/gw/*
+!bridge/gw/.gitkeep
+bridge/logs/*
+!bridge/logs/.gitkeep
+bridge/REPORT/*
+!bridge/REPORT/.gitkeep
+bridge/notes/*
+!bridge/notes/.gitkeep
+
+# your local configuration (paths); copy singularity.example.json to singularity.json
+singularity.json
+bridge/audit_units.json
+
+# secrets - the bridge itself needs none, but keep them out regardless
+.env
+*.key
+*.pem
+credentials*.json
+
+__pycache__/
+*.pyc
